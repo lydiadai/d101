@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user! ,only: [:new,:create]
+  before_action :authenticate_user! , only: [:new,:create]
+
   def new
     @group = Group.find(params[:group_id])
     @post = Post.new
@@ -43,6 +44,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def find_group
       @group = Group.find(params[:group_id])
   end
